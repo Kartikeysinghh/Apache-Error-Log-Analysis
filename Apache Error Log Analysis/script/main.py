@@ -153,13 +153,14 @@ FinalSusIps.to_csv("report/Final_Suspicious_IP_Report.csv")
 if FinalSusIps.empty:
     print("No suspicious IPs were found and the dataframe is empty") # empty dataframe cannot be plotted in case if line 146 has threshold too high
 else:
+    plt.figure(figsize=(10, 6))
     FinalSusIps.plot(kind="bar")
     plt.xlabel("Suspicious IP requests")
     plt.ylabel("Number of hits")
     plt.title("Suspicious IPs: Requests vs Errors")
     plt.xticks(rotation=45)
-    plt.show()
     plt.savefig("report/Final_Suspicious_IP_Plot.png")
+    plt.show()
 
 
 
@@ -173,6 +174,7 @@ else:
 
 
  
+
 
 
 
